@@ -1,0 +1,51 @@
+<html>
+	<head> 
+		<title> Addition App by Kamal Sir </title>	
+		<style>
+			*{ text-align:center;font-size:50px; }
+			body {background-color:azure;}
+		</style>
+	</head>
+	<body>
+		<h1> Addition App </h1>
+		<form onsubmit="find()">
+			<input type="number" step="0.01" id="n1" placeholder="enter first number" />
+			<br/><br/>
+			<input type ="number" step="0.01" id="n2" placeholder="enter second number" />
+			<br/><br/>
+			<input type="submit" value="Add" />
+		</form>
+			<h2 id="msg"/>
+
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				
+				let n1=document.getElementById("n1");
+				let n2=document.getElementById("n2");
+				let msg = document.getElementById("msg");
+
+				if (n1.value === "")
+				{
+					alert("please enter first number");
+					n1.focus();
+					msg.innerHTML="";
+					return;
+				}
+
+				if (n2.value === "")
+				{
+					alert("please enter second number");
+					n2.focus();
+					msg.innerHTML="";
+					return;
+				}
+
+				let num1 = parseFloat(n1.value);
+				let num2 = parseFloat(n2.value);
+				let res = num1 + num2;
+				msg.innerHTML="res of addition =" + res.toFixed(3);
+			}
+		</script>
+</html>
